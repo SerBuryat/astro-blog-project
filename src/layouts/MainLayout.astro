@@ -12,7 +12,9 @@ const {title, description = "default description"} = Astro.props;
     <MainHead {title} {description}/>
 	<body>
 		<Nav/>
-		<slot> default text </slot>
+		<main>
+			<slot> default text </slot>
+		</main>
 		<Footer/>
 	</body>
 </html>

@@ -16,6 +16,7 @@
     "@astrojs/check": "^0.9.3",
     "astro": "^4.14.3",
     "astro-icon": "^1.1.1",
+    "mdx": "^0.3.1",
     "postcss": "^8.4.41",
     "postcss-preset-env": "^10.0.2",
     "typescript": "^5.5.4"
