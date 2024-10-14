@@ -6,6 +6,7 @@ import Pagination from "../../components/Pagination.astro";
 
 import { formatBlogPosts } from "../../js/utils";
 
+// @ts-ignore
 export async function getStaticPaths({ paginate }) {
   const allPosts = await Astro.glob("./*.md");
   const formattedPosts = formatBlogPosts(allPosts);
@@ -21,6 +22,7 @@ const { page } = Astro.props;
     <h1 class="h1">New Blog Posts</h1>
     <div class="post-container">
       {
+        // @ts-ignore
         page.data.map((post: { frontmatter: any; url: any }) => (
           <PostCard
             frontmatter={post.frontmatter}
@@ -30,7 +32,11 @@ const { page } = Astro.props;
         ))
       }
     </div>
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    <!-- @ts-ignore -->
+    <Pagination
+      prevUrl={page.url.prev} 
+      nextUrl={page.url.next} 
+    />
   </section>
   <aside class="container" aria-label="Blog categories">
     <h2 class="h3">Blog Categories</h2>
